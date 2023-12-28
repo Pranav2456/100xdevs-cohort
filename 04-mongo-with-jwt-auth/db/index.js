@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://pranavvinodan:lQc1F7qZA8TVvXeg@cluster0.2kuj13n.mongodb.net/');
+mongoose.connect("mongodb+srv://pranav_vinodan:1Exyc9xHgEoFKQtq@pranav.msmumjl.mongodb.net/");
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
     username : String,
     password: String,
-    courses: [{
+    purchasedCourses: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "courses"
+        ref: "Course"
     }]
 
 });
@@ -17,9 +17,9 @@ const AdminSchema = new mongoose.Schema({
 const UserSchema = new mongoose.Schema({
     username : String,
     password: String,
-    courses: [{
+    purchasedCourses: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "courses"
+        ref: "Course"
     }]
 });
 
